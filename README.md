@@ -181,3 +181,7 @@ python3 /home/piuser/robot/FinalWorkingPythonCode.py
 | **Guide** | Ms. Shreya, Department of Computer Science |
 | **Program** | TCE Internship — Sahyadri College of Engineering & Management |
 | **Mentor** | Pulkit Garg, Technical Career Education |
+=======
+# Human_Following_Robot
+A vision-based mobile robot that detects, tracks, and follows a specific person in real time using computer vision algorithms. Covers object tracking, robot motion control, and human–robot interaction.
+
