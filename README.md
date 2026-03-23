@@ -16,6 +16,9 @@ An autonomous two-wheeled robot that detects and follows a human in real time us
 - L298N Motor Driver
 - 2x Blue 6V Gear TT Motor (Metal Gears)
 - Battery Pack
+  
+## Circuit Diagram
+![Circuit Diagram](circuit_diagram.svg)
 
 ## Pin Connections
 | Arduino Pin | L298N |
