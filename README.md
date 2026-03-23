@@ -3,7 +3,7 @@
 An autonomous two-wheeled robot that detects and follows a human in real time using a camera and deep learning.
 
 ## About The Robot
-![About the Robot](Human Following Robot(Cmera+Open CV).png)
+![About the Robot](Human_Following_Robot.png)
 
 ## How It Works
 - Raspberry Pi captures live video from a USB webcam
