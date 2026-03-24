@@ -46,8 +46,8 @@ An autonomous two-wheeled robot that detects and follows a human in real time us
 ## Files
 | File | Description |
 |------|-------------|
-| `robot.py` | Main Python script — runs on Raspberry Pi |
-| `robot.ino` | Arduino motor control code |
+| `visionAndIntelligence.py` | Main Python script — runs on Raspberry Pi |
+| `ArduinoCode.ino` | Arduino motor control code |
 
 ## Project Status
 🟡 Work in Progress
