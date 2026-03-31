@@ -180,3 +180,4 @@ python3 /home/piuser/robot/vision14.py
 | **Institution** | Yenepoya Institute of Arts, Science, Commerce and Management, Mangalore |
 | **Guide** | Ms. Shreya, Department of Computer Science |
 | **Program** | TCE Internship — Sahyadri College of Engineering & Management |
+| **Mentor** | Pulkit Garg, Technical Career Education |
