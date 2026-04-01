@@ -22,7 +22,7 @@ An autonomous two-wheeled robot that detects and follows a human in real time us
 - Battery Pack
   
 ## Circuit Diagram
-![Circuit Diagram](circuit_diagram.svg)
+![Circuit Diagram](OriginalCircuitDiagram.png)
 
 ## Pin Connections
 | Arduino Pin | L298N |
