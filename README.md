@@ -134,6 +134,45 @@ human-following-robot/
 
 ---
 
+## 🛠️ Setup Instructions
+
+### 1. Create Virtual Environment
+
+#### Windows:
+python -m venv venv
+venv\Scripts\activate
+
+#### Linux/Mac:
+python3 -m venv venv
+source venv/bin/activate
+
+---
+
+### 2. Install Dependencies
+
+pip install -r requirements.txt
+
+---
+
+### 3. Run Setup Script (Alternative)
+
+#### Windows:
+setup.bat
+
+#### Linux/Mac:
+bash setup.sh
+
+---
+
+## 📦 Requirements
+
+The project dependencies are listed in `requirements.txt`.
+
+Main libraries used:
+- OpenCV (for computer vision)
+- NumPy (for numerical operations)
+- PySerial (for Arduino communication)
+
 ## Running the Robot
 
 ```bash
