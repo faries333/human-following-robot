@@ -151,7 +151,6 @@ python3 /home/piuser/robot/FinalWorkingPythonCode.py
 
 ### Done ✅
 - Real-time person detection with MobileNet-SSD (COCO, Caffe)
-- Single-person identity lock using HS colour histogram + Bhattacharyya distance
 - Frame-by-frame tracking with OpenCV CSRT tracker
 - Threaded background re-validation (no main loop stalls)
 - PD controller for proportional turn speed
@@ -172,8 +171,6 @@ python3 /home/piuser/robot/FinalWorkingPythonCode.py
 
 ## Project Info
 
-| | |
-|---|---|
 | **Student** | Khader Faries |
 | **Register No.** | 23BCARI058 |
 | **Course** | BCA (AI, ML, Robotics & IoT) with Microsoft |
@@ -181,3 +178,4 @@ python3 /home/piuser/robot/FinalWorkingPythonCode.py
 | **Guide** | Ms. Shreya, Department of Computer Science |
 | **Program** | TCE Internship — Sahyadri College of Engineering & Management |
 | **Mentor** | Pulkit Garg, Technical Career Education |
+
