@@ -124,12 +124,12 @@ touch /home/piuser/robot/vision10.py
 touch /home/piuser/robot/vision11.py
 touch /home/piuser/robot/vision12.py
 touch /home/piuser/robot/vision13.py
-touch /home/piuser/robot/vision14.py
+touch /home/piuser/robot/finalWorkingPythonCode.py
 ```
 
 ### Open and edit a file using nano
 ```bash
-nano /home/piuser/robot/vision14.py
+nano /home/piuser/robot/finalWorkingPythonCode.py
 ```
 
 ---
@@ -156,12 +156,12 @@ python3 /home/piuser/robot/vision10.py
 python3 /home/piuser/robot/vision11.py
 python3 /home/piuser/robot/vision12.py
 python3 /home/piuser/robot/vision13.py
-python3 /home/piuser/robot/vision14.py
+python3 /home/piuser/robot/finalWorkingPythonCode.py
 ```
 
 ### Run the final working code
 ```bash
-python3 /home/piuser/robot/vision14.py
+python3 /home/piuser/robot/finalWorkingPythonCode.py
 ```
 
 ### Stop a running script
@@ -302,7 +302,7 @@ git add .
 
 ### Stage specific files
 ```bash
-git add PythonCode/vision14.py
+git add PythonCode/finalWorkingPythonCode.py
 git add ArduinoCode/FinalWorkingMotorCode.ino
 git add COMMANDS.md
 ```
