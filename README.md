@@ -180,7 +180,16 @@ cd human-following-robot
 
 ---
 
-### Step 4 — Install Python Dependencies
+### Step 4 — Install Python Dependencies (Using setup file and Manually)
+
+Run setup.sh(Linux/IOS)
+
+```bash
+bash setup.sh
+```
+This Will Install All the Dependencies Required for the robot
+
+OR You can do it Manually
 
 ```bash
 pip3 install opencv-contrib-python pyserial numpy
