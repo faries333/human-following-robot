@@ -63,12 +63,6 @@ An autonomous two-wheeled robot that detects, identifies, and follows a single d
 | NumPy | Latest | Array operations for histogram |
 | Arduino IDE | Latest | Motor controller firmware |
 
-### Install dependencies on Raspberry Pi
-
-```bash
-pip3 install opencv-contrib-python pyserial numpy
-```
-
 ---
 
 ## Serial Command Protocol
@@ -134,53 +128,166 @@ human-following-robot/
 
 ---
 
-## 🛠️ Setup Instructions
+## 🛠️ Complete Setup Guide (Beginner Friendly)
 
-### 1. Create Virtual Environment
-
-#### Windows:
-python -m venv venv
-venv\Scripts\activate
-
-#### Linux/Mac:
-python3 -m venv venv
-source venv/bin/activate
+> **Follow every step in order. Copy and paste each command exactly as shown.**  
+> You will need: Raspberry Pi 4 running Raspberry Pi OS, Arduino Uno connected via USB, and a USB webcam plugged in.
 
 ---
 
-### 2. Install Dependencies
+### Step 1 — Update Your Raspberry Pi
 
-pip install -r requirements.txt
-
----
-
-### 3. Run Setup Script (Alternative)
-
-#### Windows:
-setup.bat
-
-#### Linux/Mac:
-bash setup.sh
-
----
-
-## 📦 Requirements
-
-The project dependencies are listed in `requirements.txt`.
-
-Main libraries used:
-- OpenCV (for computer vision)
-- NumPy (for numerical operations)
-- PySerial (for Arduino communication)
-
-## Running the Robot
+Open a terminal on the Raspberry Pi and run:
 
 ```bash
-# On the Raspberry Pi
-python3 /home/piuser/robot/FinalWorkingPythonCode.py
-
-# Press Q to quit
+sudo apt update && sudo apt upgrade -y
 ```
+
+> This makes sure your Pi has the latest software. It may take a few minutes.
+
+---
+
+### Step 2 — Install Git (if not already installed)
+
+```bash
+sudo apt install git -y
+```
+
+Check it worked:
+
+```bash
+git --version
+```
+
+You should see something like `git version 2.x.x`.
+
+---
+
+### Step 3 — Clone This Repository
+
+```bash
+cd ~
+git clone https://github.com/faries333/human-following-robot.git
+```
+
+This downloads all the project files into a folder called `human-following-robot` on your Pi.
+
+Navigate into it:
+
+```bash
+cd human-following-robot
+```
+
+---
+
+### Step 4 — Install Python Dependencies
+
+```bash
+pip3 install opencv-contrib-python pyserial numpy
+```
+
+> ⏳ `opencv-contrib-python` is a large package — this may take **5–10 minutes** on a Pi. Let it finish.
+
+Verify the install:
+
+```bash
+python3 -c "import cv2, serial, numpy; print('All libraries installed successfully!')"
+```
+
+You should see: `All libraries installed successfully!`
+
+---
+
+### Step 5 — Upload the Arduino Code
+
+1. On a **laptop or desktop**, download and install the [Arduino IDE](https://www.arduino.cc/en/software)
+2. Open the file: `ArduinoCode/FinalWorkingMotorCode.ino`
+3. Connect the Arduino Uno to your laptop via USB
+4. In the Arduino IDE:
+   - Go to **Tools → Board** → select `Arduino Uno`
+   - Go to **Tools → Port** → select the port that shows your Arduino (e.g. `COM3` on Windows or `/dev/ttyUSB0` on Linux)
+5. Click the **Upload** button (→ arrow icon)
+6. Wait for `Done uploading.` to appear at the bottom
+7. Disconnect the Arduino from the laptop and connect it to the Raspberry Pi via the USB-A to USB-B cable
+
+---
+
+### Step 6 — Find the Arduino Port on the Raspberry Pi
+
+Run this command **after** plugging the Arduino into the Pi:
+
+```bash
+ls /dev/ttyUSB*
+```
+
+You should see something like `/dev/ttyUSB0` or `/dev/ttyACM0`.
+
+> If nothing shows up, try `ls /dev/ttyACM*` instead.
+
+If you see a port other than `/dev/ttyUSB0`, open the Python file and update the port:
+
+```bash
+nano ~/human-following-robot/PythonCode/FinalWorkingPythonCode.py
+```
+
+Find the line that says:
+
+```python
+SERIAL_PORT = '/dev/ttyUSB0'
+```
+
+Change it to match your port (e.g. `/dev/ttyACM0`), then save with `Ctrl+O` → `Enter` → `Ctrl+X`.
+
+---
+
+### Step 7 — Give Permission to Access the Serial Port
+
+```bash
+sudo usermod -a -G dialout $USER
+```
+
+Then **reboot** the Pi:
+
+```bash
+sudo reboot
+```
+
+After it restarts, open a terminal again and go back to the project folder:
+
+```bash
+cd ~/human-following-robot
+```
+
+---
+
+## ▶️ How to Run the Robot
+
+> Make sure the Arduino is plugged into the Pi, the webcam is plugged in, and the motors are connected before running.
+
+```bash
+python3 PythonCode/FinalWorkingPythonCode.py
+```
+
+**What happens next:**
+
+1. A camera window opens showing the live feed
+2. Stand in front of the robot — it will detect you automatically
+3. The robot locks onto the person closest to the centre of the frame
+4. It will start following you as you move left or right
+5. Press **`Q`** on the keyboard to stop the program and shut down the motors safely
+
+---
+
+### ⚠️ Troubleshooting
+
+| Problem | Fix |
+|--------|-----|
+| `No module named cv2` | Run `pip3 install opencv-contrib-python` again |
+| `Serial port not found` | Check the port with `ls /dev/ttyUSB*` and update `SERIAL_PORT` in the script |
+| `Permission denied: '/dev/ttyUSB0'` | Run `sudo usermod -a -G dialout $USER` and reboot |
+| Camera window doesn't open | Make sure the webcam is plugged in before running the script |
+| Robot doesn't move | Check motor wiring to L298N and confirm Arduino was uploaded successfully |
+| Robot turns the wrong way | The LEFT_TRIM or motor wires may be swapped — check L298N connections |
 
 ---
 
@@ -217,4 +324,3 @@ python3 /home/piuser/robot/FinalWorkingPythonCode.py
 | **Guide** | Ms. Shreya, Department of Computer Science |
 | **Program** | TCE Internship — Sahyadri College of Engineering & Management |
 | **Mentor** | Pulkit Garg, Technical Career Education |
-
