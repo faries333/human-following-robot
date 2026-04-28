@@ -317,10 +317,6 @@ python3 PythonCode/FinalWorkingPythonCode.py
 
 ## Project Info
 
-| **Student** | Khader Faries |
-| **Register No.** | 23BCARI058 |
-| **Course** | BCA (AI, ML, Robotics & IoT) with Microsoft |
-| **Institution** | Yenepoya Institute of Arts, Science, Commerce and Management, Mangalore |
-| **Guide** | Ms. Shreya, Department of Computer Science |
+| **Author** | Khader Faries | 
 | **Program** | TCE Internship — Sahyadri College of Engineering & Management |
 | **Mentor** | Pulkit Garg, Technical Career Education |
